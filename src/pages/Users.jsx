@@ -34,14 +34,14 @@ export const Users = () => {
                     </Row>
                 </thead>
                 <tbody>
-                    {datas.map(resu =>
+                    {datas && datas.map(resu =>
                         <Row>
                             <Col></Col>
                             <Col><td>{resu.id}</td></Col>
                             <Col><td>{resu.name}</td></Col>
                             <Col><td>{resu.address?.street}</td></Col>
                             <Col><Button onClick={() => DeleteDataThis(resu.id)}>Delete</Button></Col>
-                            <Col><td><Link to={`/users/${resu.id}/posts`} className="btn btn-primary" onClick={()=>{}} >More...</Link></td></Col>
+                            <Col><td><Link to={`/userPosts/${resu.id}`} className="btn btn-primary">More...</Link></td></Col>
                             <Col></Col>
                             <PostsUser ids={resu.id}/>
                         </Row>
